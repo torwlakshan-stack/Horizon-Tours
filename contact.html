@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SS Horizon Tours | Memories Await in Sri Lanka</title>
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Poppins:wght@300;400;500;600&display=swap"
+        rel="stylesheet">
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Styles -->
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <!-- Header -->
+    <header>
+        <div class="logo-container">
+            <!-- Logo -->
+            <img src="assets/logo.png" alt="SS Horizon Tours" class="logo-img">
+            <div class="logo-text">SS <span>HORIZON</span> TOURS</div>
+        </div>
+        <nav>
+            <div class="mobile-menu-btn">
+                <i class="fa-solid fa-bars"></i>
+            </div>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="destinations.html">Destinations</a></li>
+                <li><a href="services.html">Services</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="contact.html" class="active">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Hero Section -->
+    <!-- Hero Section -->
+    <section id="home" class="hero"
+        style="height: 60vh; background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.7)), url('assets/hero-srilanka.jpg') center/cover fixed no-repeat;">
+        <h1>Contact Us</h1>
+        <p>Start your journey today</p>
+    </section>
+
+    <!-- Destinations, Services, About Removed -->
+
+    <!-- Contact Section -->
+    <section id="contact" class="contact">
+        <div class="section-title">
+            <h2>Contact Us</h2>
+            <p style="color: rgba(255,255,255,0.8);">Ready to start your journey? Get in touch with us today!</p>
+        </div>
+
+        <div class="contact-container">
+            <div class="contact-info">
+                <div class="contact-item">
+                    <i class="fa-solid fa-phone"></i>
+                    <div>
+                        <strong>Call Us</strong>
+                        <p>+94 112 981 481</p>
+                        <p>+94 777 841 845</p>
+                    </div>
+                </div>
+                <div class="contact-item">
+                    <i class="fa-brands fa-whatsapp"></i>
+                    <div>
+                        <strong>WhatsApp</strong>
+                        <p>+94 777 841 845</p>
+                    </div>
+                </div>
+                <div class="contact-item">
+                    <i class="fa-solid fa-envelope"></i>
+                    <div>
+                        <strong>Email Us</strong>
+                        <p>sshorizontours@gmail.com</p>
+                    </div>
+                </div>
+                <div class="contact-item">
+                    <i class="fa-solid fa-location-dot"></i>
+                    <div>
+                        <strong>Address</strong>
+                        <p>No. 21/36, 2nd Cross Street,<br>Maradana Road, Hendala,<br>Wattala, Sri Lanka.</p>
+                    </div>
+                </div>
+
+                <div class="social-links">
+                    <a href="#" class="social-btn"><i class="fa-brands fa-facebook-f"></i></a>
+                    <a href="#" class="social-btn"><i class="fa-brands fa-instagram"></i></a>
+                    <a href="#" class="social-btn"><i class="fa-brands fa-twitter"></i></a>
+                </div>
+            </div>
+
+            <form class="contact-form" onsubmit="sendToWhatsapp(event)">
+                <h3 style="color: var(--secondary-color); margin-bottom: 1.5rem;">Book via WhatsApp</h3>
+                <div class="form-group">
+                    <label for="name">Your Name</label>
+                    <input type="text" id="name" class="form-control" placeholder="John Doe" required>
+                </div>
+                <div class="form-group">
+                    <label for="destination">Interested Destination</label>
+                    <select id="destination" class="form-control">
+                        <option value="Sigiriya">Sigiriya</option>
+                        <option value="Ella">Ella</option>
+                        <option value="Mirissa">Mirissa</option>
+                        <option value="Yala">Yala Safari</option>
+                        <option value="Custom Tour">Custom Tour Package</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="guests">Number of Guests</label>
+                    <input type="number" id="guests" class="form-control" value="2" min="1">
+                </div>
+                <div class="form-group">
+                    <label for="message">Message</label>
+                    <textarea id="message" rows="4" class="form-control"
+                        placeholder="I want to visit Sri Lanka..."></textarea>
+                </div>
+                <button type="submit" class="btn btn-primary"
+                    style="width: 100%; display: flex; align-items: center; justify-content: center; gap: 10px;">
+                    <i class="fa-brands fa-whatsapp" style="font-size: 1.2rem;"></i> Book Now
+                </button>
+            </form>
+            <script>
+                function sendToWhatsapp(e) {
+                    e.preventDefault();
+                    const name = document.getElementById('name').value;
+                    const destination = document.getElementById('destination').value;
+                    const guests = document.getElementById('guests').value;
+                    const message = document.getElementById('message').value;
+
+                    const text = `*New Booking Inquiry*%0A%0AName: ${name}%0ADestination: ${destination}%0AGuests: ${guests}%0AMessage: ${message}`;
+                    const phoneNumber = "94777841845";
+
+                    window.open(`https://wa.me/${phoneNumber}?text=${text}`, '_blank');
+                }
+            </script>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <p>&copy; 2024 SS Horizon Tours. All Rights Reserved. | <span class="text-accent">Memories Await</span></p>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="script.js"></script>
+</body>
+
+</html>
